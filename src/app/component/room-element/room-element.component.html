@@ -82,6 +82,7 @@
         <h2>{{ block.name }}</h2>
         <h3 *ngIf="block.booked && !disableButton">Booked by {{ block.bookedBy }}</h3>
         <h3 *ngIf="block.inUse && !disableButton">Used by {{ block.bookedBy }}</h3>
+        <h3 *ngIf="block.available && !disableButton">is Available</h3>
       </div>
       <div class="meeting-room__blocks-button">
         <button

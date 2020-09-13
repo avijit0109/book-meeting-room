@@ -38,6 +38,7 @@ export class RoomElementComponent implements OnInit {
     this.formattedDate = year + '-' + month + '-' + date;
     this.dateTimeForm.valueChanges.subscribe(value => {
       this.disableButton = true;
+      this.showError = false;
     });
   }
 
