@@ -1,0 +1,144 @@
+.modal-popup__modal-popup {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  padding-top: 32px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-popup__modal-body {
+  background-color: #101820ff;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  h2 {
+    font-family: cursive;
+    color: #ffffff;
+  }
+}
+
+.modal-popup__close-icon {
+  cursor: pointer;
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: -60px;
+}
+
+.modal-popup__disable-close-icon {
+  cursor: pointer;
+  color: #a8a8a8;
+  float: right;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.modal-popup__disable-list-items {
+  span:hover {
+    text-decoration: none !important;
+  }
+}
+
+.modal-popup__success-msg {
+  width: 30%;
+}
+
+.modal-popup__booking-msg {
+  margin-top: 32px;
+  margin-bottom: 22px;
+  p {
+    margin-bottom: 40px;
+    font-size: 18px;
+    font-family: cursive;
+    color: #ffffff;
+  }
+}
+
+.modal-popup__list-section {
+  margin-top: 45px;
+  max-height: 350px;
+}
+
+.modal-popup__list-scroll {
+  overflow-y: scroll;
+}
+
+.modal-popup__list-items {
+  background: #ffffff;
+  border: 2px solid #a9a9a9;
+  padding: 17px;
+  margin-bottom: 20px;
+  width: 96%;
+  span:hover {
+    text-decoration: underline;
+  }
+  .modal-popup__close-icon {
+    margin-top: 0px;
+    font-size: 17px;
+    color: rgb(194, 24, 24);
+  }
+}
+
+.modal-popup__list-content-section {
+  display: inline-flex;
+  width: 300px;
+}
+
+.modal-popup__list-content-heading {
+  p {
+    font-size: 18px;
+    font-family: cursive;
+    text-decoration: underline;
+  }
+}
+
+.modal-popup__list-content {
+  font-family: cursive;
+  margin-left: 10px;
+  margin-top: 20px;
+  margin-right: 10px;
+  font-size: 17px;
+  width: 150px;
+}
+
+.modal-popup__warning-msg {
+  border-left: 5px solid #ce6b27;
+  background: #f8e9df;
+  text-align: left;
+  display: flex;
+  width: 100%;
+  margin: 0px 0px -40px 0px;
+
+  p {
+    color: #111111;
+    padding-left: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: sans-serif;
+  }
+}
+
+.modal-popup__links {
+  margin-top: 8px;
+  width: 80%;
+  a {
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #036d9b;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  a:first-child {
+    margin-right: 30px;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}

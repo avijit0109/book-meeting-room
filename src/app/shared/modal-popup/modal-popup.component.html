@@ -1,0 +1,72 @@
+<div class="modal-popup" *ngIf="openPopup">
+    <div class="modal-popup__modal-popup">
+        <div class="modal-popup__modal-body" [ngClass]="{'modal-popup__success-msg': !viewMeetingList}">
+            <h2 *ngIf="viewMeetingList">List of Meetings for {{meetingListObject.name}}</h2>
+            <span *ngIf="viewMeetingList" (click)="closeModalPopup()" class="modal-popup__close-icon">x</span>
+            <div *ngIf="showWarningMsg" class="modal-popup__warning-msg-section">
+                <div class="modal-popup__warning-msg">
+                    <p>{{ warningMsg }}</p>
+                  </div>
+                  <div class="modal-popup__links">
+                      <a href="javascript:void(0)" (click)="confirmDelete()">Yes</a>
+                      <a href="javascript:void(0)" (click)="cancelDelete()">No</a>
+                  </div>
+            </div>
+           <div class="modal-popup__list-section" [ngClass]="{'modal-popup__list-scroll': showScroll}"
+            *ngIf="viewMeetingList && showLists">
+               <div *ngFor="let element of meetingListObject.meetingList" class="modal-popup__list-items"
+               [ngClass]="{'modal-popup__disable-list-items': showWarningMsg}" >
+                   <span *ngIf="!showWarningMsg" (click)="deleteRecord(element.meetingId)" class="modal-popup__close-icon">Delete</span>
+                   <span *ngIf="showWarningMsg" class="modal-popup__disable-close-icon">Delete</span>
+                   <div class="modal-popup__list-content-section">
+                    <div class="modal-popup__list-content-heading">
+                        <p>Booked By :</p>
+                    </div>
+                    <div class="modal-popup__list-content">
+                        {{element.userName}}
+                    </div>
+                   </div>
+                   <div class="modal-popup__list-content-section">
+                    <div class="modal-popup__list-content-heading">
+                        <p>Booking Date :</p>
+                    </div>
+                    <div class="modal-popup__list-content">
+                        {{element.meetingDate}}
+                    </div>
+                   </div>
+                   <div class="modal-popup__list-content-section">
+                    <div class="modal-popup__list-content-heading">
+                        <p>Starting Time :</p>
+                    </div>
+                    <div class="modal-popup__list-content">
+                        {{element.displayStartTime}}
+                    </div>
+                   </div>
+                   <div class="modal-popup__list-content-section">
+                    <div class="modal-popup__list-content-heading">
+                        <p>End Time :</p>
+                    </div>
+                    <div class="modal-popup__list-content">
+                        {{element.displayEndTime}}
+                    </div>
+                   </div>
+                   <div class="modal-popup__list-content-section">
+                    <div class="modal-popup__list-content-heading">
+                        <p>Agenda :</p>
+                    </div>
+                    <div class="modal-popup__list-content">
+                        {{element.Agenda}}
+                    </div>
+                   </div>
+               </div>
+            </div>
+                <div class="modal-popup__list-section" *ngIf="viewMeetingList && showStaticMsg">
+                    <h2>There are no Meetings scheduled for this room !</h2>
+                </div>
+           <div class="modal-popup__booking-msg" *ngIf="!viewMeetingList">
+               <p>Meeting Room is successfully booked !</p>
+               <button type="button" (click)="closeModalPopup()">OK</button>
+           </div>
+        </div>
+    </div>
+</div>

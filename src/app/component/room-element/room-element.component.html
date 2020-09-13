@@ -1,0 +1,113 @@
+<div class="meeting-room">
+  <div class="meeting-room__heading-section">
+    <h1>Welcome to Meeting Room</h1>
+  </div>
+  <div class="meeting-room__error-msg-section" *ngIf="showError">
+    <div class="meeting-room__error-msg">
+      <p>{{ errorMsg }}</p>
+    </div>
+  </div>
+  <div class="meeting-room__search-section">
+    <form class="meeting-room__date-form" [formGroup]="dateTimeForm">
+      <div class="meeting-room__input-section">
+        <p class="meeting-room__search-section-text">Enter Username</p>
+        <input
+          formControlName="userName"
+          type="text"
+          placeholder="Enter Username"
+        />
+      </div>
+      <div class="meeting-room__input-section">
+        <p class="meeting-room__search-section-text">
+          Enter Date of the meeting
+        </p>
+        <input formControlName="Date" type="date" min="{{ formattedDate }}" />
+      </div>
+      <div class="meeting-room__input-section">
+        <p class="meeting-room__search-section-text">
+          Enter Starting Time of the meeting
+        </p>
+        <input formControlName="startTime" type="time" />
+      </div>
+      <div class="meeting-room__input-section">
+        <p class="meeting-room__search-section-text">
+          Enter End Time of the meeting
+        </p>
+        <input formControlName="endTime" type="time" />
+      </div>
+      <div class="meeting-room__agenda-input-section">
+        <p class="meeting-room__search-section-text">Enter Agenda of the Meeting</p>
+        <input
+          formControlName="Agenda"
+          type="text"
+          placeholder="Enter Agenda"
+        />
+      </div>
+      <div class="meeting-room__search-section-buttons">
+        <button
+          type="button"
+          (click)="onCheckAvailabilityClick()"
+          [ngClass]="{
+            'meeting-room__disable-button': dateTimeForm.invalid
+          }"
+          [disabled]="dateTimeForm.invalid"
+        >
+          Check Availability
+        </button>
+        <button
+          type="button"
+          (click)="onResetClick()"
+          [ngClass]="{
+            'meeting-room__reset-button': dateTimeForm.dirty,
+            'meeting-room__disable-reset-button': !dateTimeForm.dirty
+          }"
+          [disabled]="!dateTimeForm.dirty"
+        >
+          Reset
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="meeting-room__room-block-section">
+    <div class="meeting-room__blocks" *ngFor="let block of roomConfig">
+      <div
+        class="meeting-room__blocks-text"
+        [ngClass]="{
+          'meeting-room__available': block.available,
+          'meeting-room__inuse': block.inUse,
+          'meeting-room__booked': block.booked,
+          'meeting-room__disabled': disableButton
+        }"
+      >
+        <h2>{{ block.name }}</h2>
+      </div>
+      <div class="meeting-room__blocks-button">
+        <button
+          [ngClass]="{
+            'meeting-room__disable-button':
+              block.inUse || block.booked || disableButton
+          }"
+          (click)="openModalPupupForMeeetingsBooking(block.id)"
+          [disabled]="block.inUse || block.booked || disableButton"
+        >
+          Book Meeting
+        </button>
+        <button
+          (click)="openModalPupup(block.id)"
+          [ngClass]="{
+            'meeting-room__disable-button': disableButton
+          }"
+          [disabled]="disableButton"
+        >
+          View Meetings
+        </button>
+        <app-modal-popup *ngIf="block.openPopup"
+          [meetingListObject]="block"
+          [viewMeetingList] = "block.viewMeetingList"
+          [openPopup]="block.openPopup"
+          (closePopup)="closeModalPopup($event)"
+        ></app-modal-popup>
+      </div>
+    </div>
+  </div>
+</div>

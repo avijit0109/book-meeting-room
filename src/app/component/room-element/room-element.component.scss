@@ -1,0 +1,164 @@
+.meeting-room {
+  padding: 20px 40px;
+  background: #101820FF;
+}
+
+button {
+  width: 150px;
+  cursor: pointer;
+  line-height: 21px;
+  font-size: 16px;
+  background-color: #0d5da6;
+  color: #ffffff;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  padding: 10px 9px;
+  border-radius: 5px;
+}
+
+.meeting-room__heading-section {
+  text-align: center;
+  h1 {
+    color: #ffffff;
+    font-family: cursive;
+  }
+}
+
+.meeting-room__room-block-section {
+  margin-top: 30px;
+}
+
+.meeting-room__blocks {
+  display: inline-block;
+}
+
+.meeting-room__blocks-text {
+  border: 2px solid #ffffff;
+  margin-right: 20px;
+  padding: 20px;
+  min-width: 325px;
+  text-align: center;
+  h2 {
+    font-family: cursive;
+  }
+}
+
+.meeting-room__blocks-button {
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  margin-right: 20px;
+  padding: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+
+  button:first-child {
+    margin-right: 20px;
+  }
+
+  button:hover {
+    background-color: #60b2d4;
+  }
+}
+
+.meeting-room__available {
+  background-color: #4caf50;
+}
+
+.meeting-room__inuse {
+  background-color: rgb(226, 223, 58);
+}
+
+.meeting-room__booked {
+  background-color: rgb(206, 51, 51);
+}
+
+.meeting-room__input-section {
+  display: inline-block;
+}
+
+.meeting-room__disabled {
+  background-color: #d8d8d8 !important;
+}
+
+.meeting-room__disable-button {
+  background-color: #a9a9a9 !important;
+  :hover {
+    background-color: #a9a9a9 !important;
+  }
+}
+
+.meeting-room__disable-reset-button {
+  color: #a9a9a9 !important;
+  background-color: transparent !important;
+  width: 100px !important;
+  font-weight: 500 !important;
+}
+
+.meeting-room__search-section {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  button {
+    width: 250px;
+    display: block;
+    margin-top: 30px;
+  }
+  button:hover {
+    background-color: #60b2d4;
+  }
+}
+
+.meeting-room__search-section-buttons {
+  display: flex;
+}
+
+.meeting-room__reset-button {
+  background-color: transparent !important;
+  color: #ffffff!important;
+  text-decoration: underline;
+  width: 100px !important;
+  font-weight: 500 !important;
+}
+
+.meeting-room__search-section-text {
+  margin-right: 20px;
+  font-family: cursive;
+  color:#ffffff
+}
+
+.meeting-room__date-form {
+  margin-top: 8px;
+  input {
+    width: 260px;
+    height: 32px;
+    margin-right: 20px;
+    font-size: 16px;
+    font-family: cursive;
+    border-color: #ffffff;
+  }
+}
+
+.meeting-room__error-msg {
+  border-left: 5px solid #a00;
+  background: #fff2f4;
+  text-align: left;
+  display: flex;
+  width: 100%;
+  margin: 0px 0px -40px 0px;
+
+  p {
+    color: #a00;
+    padding-left: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: sans-serif;
+  }
+}
+
+.meeting-room__agenda-input-section {
+  display: inline-block;
+  width: 500px;
+  input {
+    width: 100%;
+  }
+}
