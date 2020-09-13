@@ -117,6 +117,7 @@ export class RoomElementComponent implements OnInit {
               element.available = true;
               element.inUse = false;
               element.booked = false;
+              element.bookedBy = ''
             } else {
               if (this.dateTimeForm.controls['userName'].value === value.userName) {
                 element.inUse = false;
@@ -127,6 +128,7 @@ export class RoomElementComponent implements OnInit {
                 element.available = false;
                 element.booked = false;
               }
+              element.bookedBy = value.userName;
               return true;
             }
           } else {
